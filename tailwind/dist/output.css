@@ -550,15 +550,15 @@ h1 {
   width: 100%;
 }
 
-@media (min-width: 240px) {
+@media (min-width: 640px) {
   .container {
-    max-width: 240px;
+    max-width: 640px;
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .container {
-    max-width: 568px;
+    max-width: 768px;
   }
 }
 
@@ -646,14 +646,14 @@ h1 {
   justify-content: space-between;
 }
 
+.bg-gmpictonblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 172 208 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.bg-orange-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
 
 .bg-purple-400 {
@@ -664,6 +664,11 @@ h1 {
 .bg-slate-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.bg-gmbondiblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 142 177 / var(--tw-bg-opacity));
 }
 
 .p-3 {
@@ -711,14 +716,14 @@ h1 {
   text-decoration-line: underline;
 }
 
-@media (min-width: 240px) {
+@media (min-width: 640px) {
   .sm\:bg-orange-950 {
     --tw-bg-opacity: 1;
     background-color: rgb(67 20 7 / var(--tw-bg-opacity));
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .md\:bg-orange-100 {
     --tw-bg-opacity: 1;
     background-color: rgb(255 237 213 / var(--tw-bg-opacity));
