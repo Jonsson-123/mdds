@@ -1,48 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../dist/output.css" rel="stylesheet" />
-    <style>
-      /* Custom CSS for the banner image */
-    </style>
-    <title>Document</title>
-  </head>
 
-  <body class="bg-gray-100">
-    <!-- Navbar -->
-    <nav class="bg-purple-400 p-4">
-      <div class="container mx-auto">
-        <a href="#" class="text-white text-2xl font-bold">Your Logo</a>
-        <!-- Add navigation links here -->
-      </div>
-    </nav>
-    <!-- Banner Section -->
-    <header
-      class="banner-image bg-[url('img/kuvakuva.jpg')] bg-cover bg-center h-1/4"
-    >
-      <div class="container mx-auto flex justify-between items-center h-full">
-        <div class="text-white">
-          <h1
-            class="text-4xl font-bold p-3 bg-slate-600 sm:bg-orange-950 md:bg-orange-100 lg:bg-yellow-200 md:font-extralight xl:bg-blue-500 3xl:bg-purple-500"
-          >
-            Welcome to Your Website
-          </h1>
-          <p class="mt-2 text-lg p-3">Discover amazing content and services.</p>
-        </div>
-        <a href="#" class="text-lg font-semibold underline">Explore More</a>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../dist/output.css" rel="stylesheet" />
+  <style>
+    /* Custom CSS for the banner image */
+  </style>
+  <title>Document</title>
+</head>
 
-    <!-- Content Section -->
-    <div class="container mx-auto mt-8 p-4">
-      <h1 class="text-3xl font-semibold">Welcome to Your Website</h1>
-      <p class="mt-4">This is a basic page structure using Tailwind CSS.</p>
-      <button class="myButton">Click button</button>
-      <!-- [arbitrary esim.] w-[400px] voi itse määritellä siis arvon määrittelylle-->
-      <h3 class="bg-gmbondiblue w-10/12 mt-3">moimoi</h3>
-      <!-- Add your content here -->
+<body class="bg-gray-100 bg-[url('img/inspiskuva.jpg')] bg-cover bg-center h-screen bg-no-repeat relative ">
+  <!-- Navbar with Hamburger Menu -->
+  <nav class="bg-gmbondiblue p-4 sticky top-0 w-full z-10">
+    <div class="container mx-auto flex justify-between items-center relative">
+      <a href="#" class="text-white text-2xl font-bold">Jak Films</a>
+      <!-- Hamburger Menu Button -->
+      <div id="mobile-menu-button" class="text-white md:hidden cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+      <!-- Navigation Links (Hidden by Default) -->
+      <ul id="nav-links" class="hidden md:flex space-x-4">
+        <!-- Add your navigation links here -->
+        <li><a href="#" class="text-white">Home</a></li>
+        <li><a href="#" class="text-white">About</a></li>
+        <li><a href="#" class="text-white">Services</a></li>
+        <li><a href="#" class="text-white">Contact</a></li>
+      </ul>
     </div>
-  </body>
+  </nav>
+
+  <!-- Banner Section -->
+  <section class="h-1/2 lg:h-2/3">
+    <div class="container mx-auto flex justify-between items-center h-full flex-col">
+      <header class="text-white">
+        <h1 class="text-xl mt-12 ml-4 mr-4 bg-black rounded p-1">
+          "Celebrating cinema, one click at a time"
+        </h1>
+      </header>
+      <a href="#"
+        class="text-lg font-semibold underline text-white mb-4 rounded p-1 bg-gmpictonblue hover:bg-gm hover:text-white transition-all duration-300 ease-in-out">Latest
+        articles</a>
+    </div>
+  </section>
+
+
+
+  <!-- Content Section -->
+  <div class="p-4 w-full bg-gmmidnightgreen rounded">
+    <h2 class="text-4xl font-semibold text-gmpictonblue text-center p-4">Content section</h2>
+
+
+    <!-- Placeholder for Video Stream -->
+    <div class="mt-3 bg-gray-400 relative aspect-video">
+      <!-- Embed a YouTube video using an iframe with 16:9 aspect ratio -->
+      <iframe class="w-full h-full absolute top-0 left-0" src="https://www.youtube.com/embed/t0Q2otsqC4I"
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <button class="myButton">Open chat</button>
+
+  </div>
+
+
+  <footer>
+
+  </footer>
+  <!-- JavaScript for Responsive Navigation -->
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenuButton.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
 </html>
