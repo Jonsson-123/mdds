@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/*.{html,js}"],
+  content: ['./src/*.{html,js}'],
   theme: {
     /* 
     screens: {
@@ -14,6 +14,10 @@ module.exports = {
       // => @media (min-width: 1440px) { ... }
     },
     */
+    fontFamily: {
+      body: ['"Open Sans"'],
+      bold: ['"Open Sans-Bold'],
+    },
     extend: {
       /*
       screens: {
@@ -21,11 +25,11 @@ module.exports = {
       },
       */
       colors: {
-        gmmidnightgreen: "#133c4b",
-        gmpictonblue: "#5facd0",
-        gmcastletongreen: "#1c5935",
-        gmbondiblue: "#098eb1",
-        gmairforceblue: "#52872a0",
+        gmmidnightgreen: '#133c4b',
+        gmpictonblue: '#5facd0',
+        gmcastletongreen: '#1c5935',
+        gmbondiblue: '#098eb1',
+        gmairforceblue: '#52872a0',
       },
     },
   },

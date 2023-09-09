@@ -11,7 +11,7 @@
   <title>Document</title>
 </head>
 
-<body class="bg-gray-100 bg-[url('img/inspiskuva.jpg')] bg-cover bg-center h-screen bg-no-repeat relative ">
+<body class="bg-gmpictonblue relative font-body" style="border: 1px solid black">
   <!-- Navbar with Hamburger Menu -->
   <nav class="bg-gmbondiblue p-4 sticky top-0 w-full z-10">
     <div class="container mx-auto flex justify-between items-center relative">
@@ -26,49 +26,100 @@
       <ul id="nav-links" class="hidden md:flex space-x-4">
         <!-- Add your navigation links here -->
         <li><a href="#" class="text-white">Home</a></li>
-        <li><a href="#" class="text-white">About</a></li>
-        <li><a href="#" class="text-white">Services</a></li>
-        <li><a href="#" class="text-white">Contact</a></li>
+        <li><a href="#stream" class="text-white">Stream</a></li>
+        <li><a href="#articles" class="text-white">Articles</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Banner Section -->
-  <section class="h-1/2 lg:h-2/3">
-    <div class="container mx-auto flex justify-between items-center h-full flex-col">
+  <section class="bg-[url('img/inspiskuva.jpg')] bg-cover bg-center bg-no-repeat" style="height: 85vh;">
+    <div class="flex justify-between items-center h-full flex-col">
       <header class="text-white">
-        <h1 class="text-xl mt-12 ml-4 mr-4 bg-black rounded p-1">
+        <h1 class="text-xl lg:text-2xl mt-12 ml-4 mr-4 bg-black rounded font-bold p-1">
           "Celebrating cinema, one click at a time"
         </h1>
       </header>
-      <a href="#"
-        class="text-lg font-semibold underline text-white mb-4 rounded p-1 bg-gmpictonblue hover:bg-gm hover:text-white transition-all duration-300 ease-in-out">Latest
+      <div class="w-full h-full flex justify-center items-center lg:max-w-3xl sm: max-w-md text-center">
+        <h2 class="text-white text-xl lg:text-4xl"> Lights, Camera, Action: Join Us for an Unforgettable Cinematic
+          Experience at the JAK-Films Festival </h2>
+      </div>
+      <a href="#articles"
+        class="lg:text-xl font-semibold text-white mb-4 rounded p-1 bg-gmmidnightgreen hover:bg-gmpictonblue hover:text-white transition-all duration-300 ease-in-out"
+        style="border: 1px solid black;">Latest
         articles</a>
     </div>
   </section>
 
-
-
-  <!-- Content Section -->
-  <div class="p-4 w-full bg-gmmidnightgreen rounded">
-    <h2 class="text-4xl font-semibold text-gmpictonblue text-center p-4">Content section</h2>
-
+  <!-- Stream Section -->
+  <section class="w-full bg-gmmidnightgreen" id="stream" style="border-top: 1px solid black;">
 
     <!-- Placeholder for Video Stream -->
-    <div class="mt-3 bg-gray-400 relative aspect-video">
+    <div class="flex justify-center flex-col items-center relative aspect-video font-bold">
+      <h2 class="lg:text-4xl text-xl font-semibold text-gmpictonblue text-center p-4">Stream section</h2>
       <!-- Embed a YouTube video using an iframe with 16:9 aspect ratio -->
-      <iframe class="w-full h-full absolute top-0 left-0" src="https://www.youtube.com/embed/t0Q2otsqC4I"
-        frameborder="0" allowfullscreen></iframe>
+      <iframe class="w-2/3 h-2/3" src="https://www.youtube.com/embed/t0Q2otsqC4I" frameborder="0" allowfullscreen>
+
+      </iframe>
+      <button class="myButton">Open chat</button>
     </div>
+  </section>
 
-    <button class="myButton">Open chat</button>
+  <!-- Articles Section -->
+  <section class="bg-gray-100 py-12" id="articles">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="https://placekitten.com/300/300" alt="Article 1" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Unveiling the Magic of Cinema: The JAK-Films Festival 2023</h2>
+          <p class="text-gray-600">The JAK-Films Festival has always been synonymous with excellence in cinema, and this
+            year is no exception. As we step into the realm of 2023, the festival is set to mesmerize audiences with a
+            curated selection of the finest films across genres. From gripping dramas to heartwarming comedies and
+            mind-bending thrillers, there's something for every film lover.</p>
+          <a href="#" class="text-blue-600 hover:underline">Read more</a>
+        </div>
+      </div>
 
-  </div>
+      <!-- Card 2 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="https://placekitten.com/300/300" alt="Article 2" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Cinematic Extravaganza: Exploring the Highlights of the 2023 JAK-Films
+            Festival</h2>
+          <p class="text-gray-600">Mark your calendars for the JAK-Films Festival 2023 and be prepared to be enchanted
+            by the magic of cinema. Stay tuned for updates on the film lineup, guest appearances, and all the exciting
+            events we have in store. This year, we invite you to join us in celebrating the captivating world of cinema,
+            one frame at a time.
 
 
-  <footer>
 
+
+          </p>
+          <a href="#" class="text-blue-600 hover:underline">Read more</a>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <h2 class="text-xl font-bold mb-2">"JAK-Films Festival is not just about what happens on the screen; it's also
+          about the experience. Picture yourself immersed in the electric atmosphere of a red carpet premiere, rubbing
+          shoulders with the stars, and engaging in discussions with directors and actors. It's an unforgettable
+          experience that goes beyond the ordinary."
+        </h2>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+
+  <footer class="bg-gray-800 py-4 text-white text-center">
+    <div class="container mx-auto">
+      <p>&copy; 2023 JAK-Films. All rights reserved.</p>
+    </div>
   </footer>
+
+
   <!-- JavaScript for Responsive Navigation -->
   <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -79,5 +130,6 @@
     });
   </script>
 </body>
+
 
 </html>
