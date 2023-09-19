@@ -679,10 +679,6 @@ h1 {
   aspect-ratio: 16 / 9;
 }
 
-.h-2\/3 {
-  height: 66.666667%;
-}
-
 .h-48 {
   height: 12rem;
 }
@@ -699,8 +695,8 @@ h1 {
   width: 83.333333%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-4\/5 {
+  width: 80%;
 }
 
 .w-6 {
@@ -1000,8 +996,8 @@ h1 {
 }
 
 @media (min-width: 1024px) {
-  .lg\:mb-0 {
-    margin-bottom: 0px;
+  .lg\:w-3\/5 {
+    width: 60%;
   }
 
   .lg\:max-w-3xl {

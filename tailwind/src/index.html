@@ -5,10 +5,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../dist/output.css" rel="stylesheet" />
-  <style>
-    /* Custom CSS for the banner image */
-  </style>
+  <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+  <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
   <title>Document</title>
+  <style>
+    .video-js {
+      /* The base font size controls the size of everything, not just text.
+     All dimensions use em-based sizes so that the scale along with the font size.
+     Try increasing it to 15px and see what happens. */
+      font-size: 10px;
+
+      /* The main font color changes the ICON COLORS as well as the text */
+      color: #5facd0;
+    }
+
+    /* Change the progress bar color */
+    .vjs-theme-fantasy .vjs-progress-holder .vjs-play-progress,
+    .vjs-theme-fantasy .vjs-progress-holder .vjs-load-progress {
+      background-color: #5facd0;
+    }
+
+    /* Customize the big play button styles */
+    .vjs-theme-fantasy .vjs-big-play-button {
+      /* Change the background color */
+      /* Change the text color */
+      color: #5facd0;
+      /* Add additional styles as needed */
+    }
+
+    /* Customize the big play button on hover */
+    .vjs-theme-fantasy .vjs-big-play-button:hover {
+      /* Change the text color on hover */
+      color: #fff;
+    }
+
+    .vjs-theme-fantasy .vjs-progress-holder .vjs-play-progress {
+      background-color: #5facd0;
+    }
+
+    /* Customize the progress bar mark */
+    .vjs-theme-fantasy .vjs-play-progress,
+    .vjs-theme-fantasy .vjs-play-progress:before {
+      background-color: #5facd0;
+      ;
+    }
+  </style>
 </head>
 
 <body class="bg-gmpictonblue relative font-body" style="border: 1px solid black">
@@ -54,14 +95,18 @@
   <!-- Stream Section -->
   <section class="w-full bg-gmmidnightgreen" id="stream" style="border-top: 1px solid black;">
 
-    <!-- Placeholder for Video Stream -->
-    <div class="flex justify-center flex-col items-center relative aspect-video font-bold">
+    <div class="flex justify-center flex-col items-center relative font-bold">
       <h2 class="lg:text-4xl text-xl font-semibold text-gmpictonblue text-center p-4">Watch Live</h2>
-      <!-- Embed a YouTube video using an iframe with 16:9 aspect ratio -->
-      <iframe class="w-2/3 h-2/3" src="https://www.youtube.com/embed/t0Q2otsqC4I" frameborder="0" allowfullscreen>
-
-      </iframe>
-      <button class="myButton mb-2 lg:mb-0">Open chat</button>
+      <video id="my-video" class="video-js vjs-theme-fantasy aspect-video w-4/5 lg:w-3/5 h-full" preload="auto"
+        data-setup="{}">
+        <source src="stream.mp4" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+      </video>
+      <button class="myButton mb-2">Open chat</button>
     </div>
   </section>
 
@@ -92,9 +137,6 @@
             events we have in store. This year, we invite you to join us in celebrating the captivating world of cinema,
             one frame at a time.
 
-
-
-
           </p>
           <a href="#" class="text-blue-600 hover:underline">Read more</a>
         </div>
@@ -114,22 +156,33 @@
     </div>
   </section>
 
-
   <footer class="bg-gray-800 py-4 text-white text-center">
     <div class="container mx-auto">
       <p>&copy; 2023 JAK-Films. All rights reserved.</p>
     </div>
   </footer>
+  <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
 
-
-  <!-- JavaScript for Responsive Navigation -->
   <script>
+    <!-- JavaScript for Responsive Navigation -->
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const navLinks = document.getElementById('nav-links');
 
     mobileMenuButton.addEventListener('click', () => {
       navLinks.classList.toggle('hidden');
     });
+
+    const myPlayer = document.querySelector(".video-js");
+
+    videojs(myPlayer, {
+      controls: true,
+      autoplay: false,
+      preload: "auto",
+
+      // liveui: true,
+      //inactivityTimeout: 0,
+    });
+
   </script>
 </body>
 
