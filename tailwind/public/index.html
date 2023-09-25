@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="./css/output.css" rel="stylesheet" />
   <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
   <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
   <title>Document</title>
@@ -46,6 +46,8 @@
       color: #fff;
     }
   </style>
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer src="./chat.js"></script>
 </head>
 
 <body class="bg-gmpictonblue relative font-body" style="border: 1px solid black">
@@ -70,7 +72,7 @@
   </nav>
 
   <!-- Banner Section -->
-  <section class="bg-[url('img/inspiskuva.jpg')] bg-cover bg-center bg-no-repeat" style="height: 85vh;">
+  <section class="bg-[url('../inspiskuva.jpg')] bg-cover bg-center bg-no-repeat" style="height: 85vh;">
     <div class="flex justify-between items-center h-full flex-col">
       <header class="text-white">
         <h1 class="text-xl lg:text-2xl mt-12 ml-4 mr-4 bg-black rounded font-bold p-1">
@@ -89,21 +91,68 @@
   </section>
 
   <!-- Stream Section -->
-  <section class="w-full bg-gmmidnightgreen" id="stream" style="border-top: 1px solid black;">
-
-    <div class="flex justify-center flex-col items-center relative font-bold">
-      <h2 class="lg:text-4xl text-xl font-semibold text-gmpictonblue text-center p-4">Watch Live</h2>
-      <video id="my-video" class="video-js vjs-theme-fantasy aspect-video w-4/5 lg:w-3/5 h-full" data-setup="{}">
-        <source src="stream.mp4" />
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a
-          web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-        </p>
-      </video>
-      <button class="myButton mb-2">Open chat</button>
+  <section class="w-full bg-gmmidnightgreen pb-4 flex flex-col md:flex-row" id="stream"
+    style="border-top: 1px solid black;">
+    <div class="flex flex-col md:flex-row items-center justify-center relative font-bold md:w-9/12 ml-2">
+      <!-- Video Player -->
+      <div class="w-full ">
+        <h2 class="lg:text-4xl text-xl font-semibold text-gmpictonblue text-center p-4">Watch Live</h2>
+        <video id="my-video" class="video-js vjs-theme-fantasy aspect-video w-full h-full" data-setup="{}">
+          <source src="stream.mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+      </div>
     </div>
+
+    <!-- Chat Section Placeholder -->
+    <div id="chat-section" class="flex flex-col justify-end m-2 font-bold md:w-3/12 rounded-lg p-2"
+      style="border: solid 0.5px black">
+      <div class="flex flex-col sm:flex-row sm:items-center mb-2" style="border-bottom: solid 0.5px black">
+        <select id="room" class="py-2 px-3 border md:w-min rounded-lg focus:outline-none focus:border-blue-500">
+          <option value="1">Room 1</option>
+          <option value="2">Room 2</option>
+          <option value="3">Room 3</option>
+        </select>
+        <label for="username" class="sr-only">Username</label>
+        <form id="newsubmit" class="w-full">
+          <textarea id="username" rows="1" required
+            class="block m-2 lg:m-4 p-2.5 w-32 text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Username"></textarea>
+      </div>
+
+
+      <ul id="messages" class="mt-4 self-end flex flex-col h-full w-full max-h-[50vh] sm:max-h-[70vh] overflow-y-auto"
+        style="border-bottom: solid 0.5px black">
+      </ul>
+      <div class="w-full mb-4 flex">
+
+        <div
+          class="flex flex-col md:flex-row items-center px-3 py-2 mx-auto rounded-lg bg-gmairforceblue w-full md:w-3/4 dark:bg-gray-700">
+          <label for="message" class="sr-only">Message</label>
+          <textarea id="message" rows="2" required
+            class="block m-2 w-full p-2.5  text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Message"></textarea>
+          <button type="submit"
+            class="inline-flex justify-center p-2 text-blue-600 rounded-full bg-white cursor-pointer hover:bg-blue-100 dark:text-blue-900 dark:hover:bg-gray-600">
+            <svg class="w-5 h-5 rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 18 20">
+              <path
+                d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z" />
+            </svg>
+            <span class="sr-only">Send message</span>
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+
+
   </section>
+
 
   <!-- Articles Section -->
   <section class="bg-gray-100 py-6" id="articles">
@@ -182,6 +231,7 @@
       <p>&copy; 2023 JAK-Films. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
 
   <script>
@@ -249,6 +299,7 @@
     });
 
   </script>
+
 </body>
 
 
