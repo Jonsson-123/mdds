@@ -109,34 +109,37 @@
   <section class="bg-gray-100 py-6" id="articles">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <!-- Card 1 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://placekitten.com/300/300" alt="Article 1" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden article-card">
+        <img src="https://placekitten.com/300/300" alt="Article 1" class="w-full h-48 object-cover article-image">
         <div class="p-6">
-          <h2 class="text-xl font-bold mb-2">Unveiling the Magic of Cinema: The JAK-Films Festival 2023</h2>
-          <p class="text-gray-600">The JAK-Films Festival has always been synonymous with excellence in cinema, and this
+          <h2 class="text-xl font-bold mb-2 article-title">Unveiling the Magic of Cinema: The JAK-Films Festival 2023
+          </h2>
+          <p class="text-gray-600 article-text">The JAK-Films Festival has always been synonymous with excellence in
+            cinema, and this
             year is no exception. As we step into the realm of 2023, the festival is set to mesmerize audiences with a
             curated selection of the finest films across genres. From gripping dramas to heartwarming comedies and
             mind-bending thrillers, there's something for every film lover.</p>
-          <a href="#" class="text-blue-600 hover:underline">Read more</a>
+          <a href="#" class="text-blue-600 hover:underline read-more-link">Read more</a>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://placekitten.com/300/300" alt="Article 2" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden article-card">
+        <img src="https://placekitten.com/300/300" alt="Article 2" class="w-full h-48 object-cover article-image">
         <div class="p-6">
-          <h2 class="text-xl font-bold mb-2">Cinematic Extravaganza: Exploring the Highlights of the 2023 JAK-Films
+          <h2 class="text-xl font-bold mb-2 article-title">Cinematic Extravaganza: Exploring the Highlights of the 2023
+            JAK-Films
             Festival</h2>
-          <p class="text-gray-600">Mark your calendars for the JAK-Films Festival 2023 and be prepared to be enchanted
+          <p class="text-gray-600 article-text">Mark your calendars for the JAK-Films Festival 2023 and be prepared to
+            be enchanted
             by the magic of cinema. Stay tuned for updates on the film lineup, guest appearances, and all the exciting
             events we have in store. This year, we invite you to join us in celebrating the captivating world of cinema,
             one frame at a time.
 
           </p>
-          <a href="#" class="text-blue-600 hover:underline">Read more</a>
+          <a href="#" class="text-blue-600 hover:underline read-more-link">Read more</a>
         </div>
       </div>
-
       <div class="flex justify-center items-center">
         <h2 class="text-lg m-2 md:text-xl font-bold mb-2">"JAK-Films Festival is not just about what happens on the
           screen;
@@ -146,10 +149,33 @@
           experience that goes beyond the ordinary."
         </h2>
       </div>
-
-    </div>
     </div>
   </section>
+
+  <!-- Overlay element -->
+  <div id="overlay" class="fixed hidden z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60"></div>
+  <!-- Modal -->
+  <div id="articleModal" class="modal hidden fixed inset-0 overflow-y-auto z-50">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="modal-content bg-white p-6 w-full md:max-w-3xl rounded-lg shadow-xl relative">
+        <span
+          class="modal-close absolute top-0 right-0 p-4 cursor-pointer text-3xl bg-gmmidnightgreen rounded-lg ml-1 text-white"
+          onclick="closeModal()">&times;
+        </span>
+        <h2 id="modalTitle" class="text-2xl font-bold mb-2 text-center pr-3 mr-3">Modal Title</h2>
+        <img id="modalImage" src="" alt="articles image" class="mx-auto mb-4">
+        <p id="modalText" class="text-gray-600"></p>
+
+        <!-- Close button -->
+        <button class="modal-close-button bg-gmmidnightgreen text-white px-4 py-2 rounded-lg mt-4"
+          onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
   <footer class="bg-gray-800 py-4 text-white text-center">
     <div class="container mx-auto">
@@ -159,7 +185,51 @@
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
 
   <script>
-    <!-- JavaScript for Responsive Navigation -->
+
+
+    // Function to open the modal with article content
+    function openModal(title, imageSrc, text) {
+      const modal = document.getElementById('articleModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalImage = document.getElementById('modalImage');
+      const modalText = document.getElementById('modalText');
+      const overlay = document.getElementById('overlay');
+
+
+      modalTitle.textContent = title;
+      modalImage.src = imageSrc;
+      modalText.textContent = text;
+
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      const modal = document.getElementById('articleModal');
+      const overlay = document.getElementById('overlay');
+
+      overlay.classList.add('hidden');
+      modal.classList.add('hidden');
+    }
+
+    // Attach click event listeners to "Read more" links
+    const readMoreLinks = document.querySelectorAll('.read-more-link');
+    readMoreLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent the default link behavior
+        const card = event.target.closest('.article-card');
+        const title = card.querySelector('.article-title').textContent;
+        const imageSrc = card.querySelector('.article-image').src;
+        const text = card.querySelector('.article-text').textContent;
+
+        openModal(title, imageSrc, text);
+      });
+    });
+
+
+
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const navLinks = document.getElementById('nav-links');
 
