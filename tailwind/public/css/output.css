@@ -653,6 +653,10 @@ h1 {
   margin-left: 0.25rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -671,14 +675,6 @@ h1 {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .block {
@@ -725,14 +721,6 @@ h1 {
   height: 100vh;
 }
 
-.max-h-full {
-  max-height: 100%;
-}
-
-.max-h-\[70vh\] {
-  max-height: 70vh;
-}
-
 .max-h-\[50vh\] {
   max-height: 50vh;
 }
@@ -741,8 +729,8 @@ h1 {
   min-height: 100vh;
 }
 
-.w-3\/4 {
-  width: 75%;
+.w-32 {
+  width: 8rem;
 }
 
 .w-5 {
@@ -761,58 +749,8 @@ h1 {
   width: 100vw;
 }
 
-.w-auto {
-  width: auto;
-}
-
-.w-min {
-  width: -moz-min-content;
-  width: min-content;
-}
-
-.w-2\/6 {
-  width: 33.333333%;
-}
-
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-32 {
-  width: 8rem;
-}
-
-.max-w-full {
-  max-width: 100%;
-}
-
 .max-w-md {
   max-width: 28rem;
-}
-
-.max-w-fit {
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-}
-
-.max-w-2xl {
-  max-width: 42rem;
-}
-
-.max-w-xl {
-  max-width: 36rem;
-}
-
-.max-w-\[70vh\] {
-  max-width: 70vh;
-}
-
-.flex-grow {
-  flex-grow: 1;
 }
 
 .rotate-90 {
@@ -828,16 +766,8 @@ h1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .items-center {
@@ -874,20 +804,12 @@ h1 {
   align-self: flex-end;
 }
 
-.overflow-auto {
-  overflow: auto;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
 
 .overflow-y-auto {
   overflow-y: auto;
-}
-
-.whitespace-nowrap {
-  white-space: nowrap;
 }
 
 .rounded {
@@ -900,10 +822,6 @@ h1 {
 
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.rounded-sm {
-  border-radius: 0.125rem;
 }
 
 .border {
@@ -966,22 +884,6 @@ h1 {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
-}
-
-.bg-\[url\(\'img\/inspiskuva\.jpg\'\)\] {
-  background-image: url('img/inspiskuva.jpg');
-}
-
-.bg-\[url\(\'\.\/inspiskuva\.jpg\'\)\] {
-  background-image: url('./inspiskuva.jpg');
-}
-
-.bg-\[url\(\'inspiskuva\.jpg\'\)\] {
-  background-image: url('inspiskuva.jpg');
-}
-
-.bg-\[url\(\'\.img\/inspiskuva\.jpg\'\)\] {
-  background-image: url('.img/inspiskuva.jpg');
 }
 
 .bg-\[url\(\'\.\.\/inspiskuva\.jpg\'\)\] {
@@ -1054,11 +956,6 @@ h1 {
   padding-bottom: 1.5rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1072,11 +969,11 @@ h1 {
 }
 
 .font-body {
-  font-family: "Open Sans";
+  font-family: 'Open Sans', sans serif;
 }
 
 .font-bold {
-  font-family: "Open Sans-Bold;
+  font-family: 'Open Sans-Bold', sans serif;
 }
 
 .text-2xl {
@@ -1137,11 +1034,6 @@ h1 {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-gmbondiblue {
-  --tw-text-opacity: 1;
-  color: rgb(9 142 177 / var(--tw-text-opacity));
-}
-
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1166,6 +1058,18 @@ h1 {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@font-face {
+  font-family: "Open Sans";
+
+  src: url("../public/fonts/OpenSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Open Sans-Bold";
+
+  src: url("../public/fonts/OpenSans-Bold.ttf");
 }
 
 .hover\:bg-blue-100:hover {
@@ -1255,10 +1159,6 @@ h1 {
 }
 
 @media (min-width: 640px) {
-  .sm\:max-h-\[100vh\] {
-    max-height: 100vh;
-  }
-
   .sm\:max-h-\[70vh\] {
     max-height: 70vh;
   }
@@ -1269,10 +1169,6 @@ h1 {
 
   .sm\:items-center {
     align-items: center;
-  }
-
-  .sm\:justify-between {
-    justify-content: space-between;
   }
 }
 
@@ -1285,41 +1181,21 @@ h1 {
     display: none;
   }
 
-  .md\:w-4\/6 {
-    width: 66.666667%;
+  .md\:w-3\/12 {
+    width: 25%;
   }
 
   .md\:w-3\/4 {
     width: 75%;
   }
 
-  .md\:w-auto {
-    width: auto;
+  .md\:w-9\/12 {
+    width: 75%;
   }
 
   .md\:w-min {
     width: -moz-min-content;
     width: min-content;
-  }
-
-  .md\:w-2\/6 {
-    width: 33.333333%;
-  }
-
-  .md\:w-1\/6 {
-    width: 16.666667%;
-  }
-
-  .md\:w-5\/6 {
-    width: 83.333333%;
-  }
-
-  .md\:w-9\/12 {
-    width: 75%;
-  }
-
-  .md\:w-3\/12 {
-    width: 25%;
   }
 
   .md\:max-w-3xl {
@@ -1368,3 +1244,5 @@ h1 {
     line-height: 1.75rem;
   }
 }
+
+

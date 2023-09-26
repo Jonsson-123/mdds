@@ -18,3 +18,14 @@
   }
 }
 @tailwind utilities;
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../public/fonts/OpenSans-Medium.ttf");
+}
+@font-face {
+  font-family: "Open Sans-Bold";
+  src: url("../public/fonts/OpenSans-Bold.ttf");
+}
+
+
