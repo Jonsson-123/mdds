@@ -52,7 +52,7 @@
     .title .block {
       width: 0%;
       height: inherit;
-      background: #ffb510;
+      background: #133c4b;
       position: absolute;
 
       display: flex;
@@ -91,7 +91,7 @@
     .role .block {
       width: 0%;
       height: inherit;
-      background: #e91e63;
+      background: #133c4b;
       position: absolute;
       display: flex;
     }
@@ -112,7 +112,7 @@
     }
 
     .role-p-animation {
-      animation: secFadeIn 2s forwards;
+      animation: secFadeIn 1.5s forwards;
       animation-delay: 3.2s;
     }
 
@@ -160,10 +160,14 @@
     @keyframes mainFadeIn {
       0% {
         opacity: 0;
+        transform: translateY(-10px);
+
       }
 
       100% {
         opacity: 1;
+        transform: translateY(0);
+
       }
     }
 
@@ -225,6 +229,48 @@
       console.log(`myRep changed from ${oldValue} to ${newValue}`);
       puhuja.innerHTML = newValue;
     });
+
+
+    speakerRep.on("change", (newValue, oldValue) => {
+      console.log(`myRep changed from ${oldValue} to ${newValue}`);
+      puhuja.innerHTML = newValue;
+      animations();
+    });
+
+
+    const blokki = document.getElementById("blokki");
+    const tokablokki = document.getElementById("tokablokki");
+    const rooli = document.getElementById("rooli");
+
+
+
+
+    function animations() {
+      blokki.classList.remove("title-block-animation");
+      blokki.offsetWidth;
+      blokki.classList.add("title-block-animation");
+
+
+      puhuja.classList.remove("title-h1-animation");
+      puhuja.offsetWidth;
+      puhuja.classList.add("title-h1-animation");
+
+
+      tokablokki.classList.remove("role-block-animation");
+      tokablokki.offsetWidth;
+      tokablokki.classList.add("role-block-animation");
+
+
+      rooli.classList.remove("role-p-animation");
+      rooli.offsetWidth;
+      rooli.classList.add("role-p-animation");
+
+
+      // lowerThird.classList.remove("lower-third-animation");
+      // lowerThird.offsetWidth;
+      // lowerThird.classList.add("lower-third-animation");
+    }
+
   </script>
 </body>
 
