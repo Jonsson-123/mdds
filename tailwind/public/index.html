@@ -7,7 +7,11 @@
   <link href="./css/output.css" rel="stylesheet" />
   <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
   <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Jak Films</title>
+
   <style>
     .video-js {
       /* The base font size controls the size of everything, not just text.
@@ -50,7 +54,7 @@
   <script defer src="./chat.js"></script>
 </head>
 
-<body class="bg-gmpictonblue relative font-body" style="border: 1px solid black">
+<body class="bg-gmpictonblue relative font-body  style=" border: 1px solid black">
   <!-- Navbar with Hamburger Menu -->
   <nav class="bg-gmbondiblue p-4 sticky top-0 w-full z-10">
     <div class="container mx-auto flex justify-between items-center relative">
@@ -109,9 +113,10 @@
     </div>
 
     <!-- Chat Section Placeholder -->
-    <div id="chat-section" class="flex flex-col justify-end m-2 font-bold md:w-3/12 rounded-lg p-2"
+    <div id="chat-section" class="flex flex-col justify-end m-2 font-bold md:w-3/12  p-2"
       style="border: solid 0.5px black">
-      <div class="flex flex-col sm:flex-row sm:items-center mb-2" style="border-bottom: solid 0.5px black">
+      <div class="flex flex-row md:flex-col xl:flex-row items-center md:items-start xl:items-center mb-2"
+        style="border-bottom: dashed 0.5px black">
         <select id="room" class="py-2 px-3 border md:w-min rounded-lg focus:outline-none focus:border-blue-500">
           <option value="1">Room 1</option>
           <option value="2">Room 2</option>
@@ -120,21 +125,21 @@
         <label for="username" class="sr-only">Username</label>
         <form id="newsubmit" class="w-full">
           <textarea id="username" rows="1" required
-            class="block m-2 lg:m-4 p-2.5 w-32 text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block m-2 lg:m-4 w-32 md:w-24 md:text-sm xl:w-32 xl:text-base p-2.5  text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Username"></textarea>
       </div>
 
 
       <ul id="messages" class="mt-4 self-end flex flex-col h-full w-full max-h-[50vh] sm:max-h-[70vh] overflow-y-auto"
-        style="border-bottom: solid 0.5px black">
+        style="border-bottom: dashed 0.5px black">
       </ul>
       <div class="w-full mb-4 flex">
 
         <div
-          class="flex flex-col md:flex-row items-center px-3 py-2 mx-auto rounded-lg bg-gmairforceblue w-full md:w-3/4 dark:bg-gray-700">
+          class="flex flex-row md:flex-col xl:flex-row items-center px-3 py-2 mx-auto rounded-lg bg-gmairforceblue w-full md:w-3/4 dark:bg-gray-700">
           <label for="message" class="sr-only">Message</label>
           <textarea id="message" rows="2" required
-            class="block m-2 w-full p-2.5  text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block m-2 w-full p-2.5 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Message"></textarea>
           <button type="submit"
             class="inline-flex justify-center p-2 text-blue-600 rounded-full bg-white cursor-pointer hover:bg-blue-100 dark:text-blue-900 dark:hover:bg-gray-600">
