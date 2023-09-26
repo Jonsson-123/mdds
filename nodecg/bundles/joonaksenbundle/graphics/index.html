@@ -222,12 +222,18 @@
 
   <script>
     const speakerRep = nodecg.Replicant("speakerReplicant");
+    const titleRep = nodecg.Replicant("titleReplicant");
+
     const puhuja = document.getElementById("puhuja");
+    const rooli = document.getElementById("rooli");
 
 
-    speakerRep.on("change", (newValue, oldValue) => {
+
+
+    titleRep.on("change", (newValue, oldValue) => {
       console.log(`myRep changed from ${oldValue} to ${newValue}`);
-      puhuja.innerHTML = newValue;
+      rooli.textContent = newValue;
+      animations();
     });
 
 
@@ -240,7 +246,6 @@
 
     const blokki = document.getElementById("blokki");
     const tokablokki = document.getElementById("tokablokki");
-    const rooli = document.getElementById("rooli");
 
 
 
