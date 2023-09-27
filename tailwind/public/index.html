@@ -68,9 +68,9 @@
       <!-- Navigation Links (Hidden by Default) -->
       <ul id="nav-links" class="hidden md:flex space-x-4">
         <!-- Add your navigation links here -->
-        <li><a href="#" class="text-white">Home</a></li>
-        <li><a href="#stream" class="text-white">Stream</a></li>
-        <li><a href="#articles" class="text-white">Articles</a></li>
+        <li><a href="#" class="text-white underline">Home</a></li>
+        <li><a href="#stream" class="text-white underline">Stream & Chat</a></li>
+        <li><a href="#articles" class="text-white underline">Articles</a></li>
       </ul>
     </div>
   </nav>
@@ -95,12 +95,14 @@
   </section>
 
   <!-- Stream Section -->
-  <section class="w-full bg-gmmidnightgreen pb-4 flex flex-col md:flex-row" id="stream"
+  <section class="w-full bg-gmmidnightgreen pb-4 flex flex-col lg:flex-row justify-center" id="stream"
     style="border-top: 1px solid black;">
-    <div class="flex flex-col md:flex-row items-center justify-center relative font-bold md:w-9/12 ml-2">
+    <div
+      class="flex flex-col md:flex-row items-center justify-center relative font-bold lg:w-8/12 max-w-screen-lg ml-2">
       <!-- Video Player -->
       <div class="w-full ">
-        <h2 class="lg:text-4xl text-xl font-semibold text-gmpictonblue text-center p-4">Watch Live</h2>
+        <h2 class="lg:text-4xl text-xl font-semibold text-gmpictonblue text-center p-4">Watch Live & Chat With Others
+        </h2>
         <video id="my-video" class="video-js vjs-theme-fantasy aspect-video w-full h-full" data-setup="{}">
           <source src="stream.mp4" />
           <p class="vjs-no-js">
@@ -113,32 +115,30 @@
     </div>
 
     <!-- Chat Section Placeholder -->
-    <div id="chat-section" class="flex flex-col justify-end m-2 font-bold md:w-3/12  p-2"
-      style="border: solid 0.5px black">
-      <div class="flex flex-row md:flex-col xl:flex-row items-center md:items-start xl:items-center mb-2"
-        style="border-bottom: dashed 0.5px black">
-        <select id="room" class="py-2 px-3 border md:w-min rounded-lg focus:outline-none focus:border-blue-500">
-          <option value="1">Room 1</option>
-          <option value="2">Room 2</option>
-          <option value="3">Room 3</option>
+    <div id="chat-section" class="flex flex-col justify-end m-4 max-h-[65vh] font-bold lg:w-4/12  p-2">
+      <div class="flex flex-row items-center md:items-start xl:items-center mb-2">
+        <select id="room"
+          class=" text-sm lg:text-xs xl:text-base py-2 px-3 mb-2 ml-2 border md:w-min rounded-lg focus:outline-none focus:border-blue-500">
+          <option value="1">Livestream</option>
+          <option value="2">Awards</option>
+          <option value="3">General</option>
         </select>
         <label for="username" class="sr-only">Username</label>
         <form id="newsubmit" class="w-full">
-          <textarea id="username" rows="1" required
-            class="block m-2 lg:m-4 w-32 md:w-24 md:text-sm xl:w-32 xl:text-base p-2.5  text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          <textarea id="username" rows="1" required maxlength="10"
+            class="block ml-2 xl:ml-4 mb-2  w-32 md:w-24 lg:w-32 xl:40 text-sm lg:text-xs xl:text-base p-2.5  text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Username"></textarea>
       </div>
 
 
-      <ul id="messages" class="mt-4 self-end flex flex-col h-full w-full max-h-[50vh] sm:max-h-[70vh] overflow-y-auto"
-        style="border-bottom: dashed 0.5px black">
+      <ul id="messages" class="mt-4 self-end flex flex-col h-full w-full max-h-[50vh] sm:max-h-[70vh] overflow-y-auto">
       </ul>
       <div class="w-full mb-4 flex">
 
         <div
-          class="flex flex-row md:flex-col xl:flex-row items-center px-3 py-2 mx-auto rounded-lg bg-gmairforceblue w-full md:w-3/4 dark:bg-gray-700">
+          class="flex flex-row lg:flex-col xl:flex-row items-center px-3 py-2 mx-auto rounded-lg bg-gmairforceblue w-full md:w-3/4 dark:bg-gray-700">
           <label for="message" class="sr-only">Message</label>
-          <textarea id="message" rows="2" required
+          <textarea id="message" rows="2" required maxlength="50"
             class="block m-2 w-full p-2.5 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Message"></textarea>
           <button type="submit"
@@ -166,14 +166,16 @@
       <div class="bg-white shadow-md rounded-lg overflow-hidden article-card">
         <img src="https://placekitten.com/300/300" alt="Article 1" class="w-full h-48 object-cover article-image">
         <div class="p-6">
-          <h2 class="text-xl font-bold mb-2 article-title">Unveiling the Magic of Cinema: The JAK-Films Festival 2023
+          <h2 class="text-xl md:text-lg font-bold mb-2 article-title">Unveiling the Magic of Cinema: The JAK-Films
+            Festival 2023
           </h2>
-          <p class="text-gray-600 article-text">The JAK-Films Festival has always been synonymous with excellence in
+          <p class="text-gray-600 md:text-sm article-text">The JAK-Films Festival has always been synonymous with
+            excellence in
             cinema, and this
             year is no exception. As we step into the realm of 2023, the festival is set to mesmerize audiences with a
             curated selection of the finest films across genres. From gripping dramas to heartwarming comedies and
             mind-bending thrillers, there's something for every film lover.</p>
-          <a href="#" class="text-blue-600 hover:underline read-more-link">Read more</a>
+          <a href="#" class="text-blue-600 hover:underline read-more-link">Read</a>
         </div>
       </div>
 
@@ -181,21 +183,24 @@
       <div class="bg-white shadow-md rounded-lg overflow-hidden article-card">
         <img src="https://placekitten.com/300/300" alt="Article 2" class="w-full h-48 object-cover article-image">
         <div class="p-6">
-          <h2 class="text-xl font-bold mb-2 article-title">Cinematic Extravaganza: Exploring the Highlights of the 2023
+          <h2 class="text-xl md:text-lg font-bold mb-2 article-title">Cinematic Extravaganza: Exploring the Highlights
+            of the 2023
             JAK-Films
             Festival</h2>
-          <p class="text-gray-600 article-text">Mark your calendars for the JAK-Films Festival 2023 and be prepared to
+          <p class="text-gray-600 md:text-sm article-text">Mark your calendars for the JAK-Films Festival 2023 and be
+            prepared to
             be enchanted
             by the magic of cinema. Stay tuned for updates on the film lineup, guest appearances, and all the exciting
             events we have in store. This year, we invite you to join us in celebrating the captivating world of cinema,
             one frame at a time.
 
           </p>
-          <a href="#" class="text-blue-600 hover:underline read-more-link">Read more</a>
+          <a href="#" class="text-blue-600 hover:underline read-more-link">Read</a>
         </div>
       </div>
       <div class="flex justify-center items-center">
-        <h2 class="text-lg m-2 md:text-xl font-bold mb-2">"JAK-Films Festival is not just about what happens on the
+        <h2 class="text-lg md:text-xl p-4 md:p-0 font-bold mb-2">"JAK-Films Festival is not just about what happens on
+          the
           screen;
           it's also
           about the experience. Picture yourself immersed in the electric atmosphere of a red carpet premiere, rubbing
@@ -205,6 +210,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Overlay element -->
   <div id="overlay" class="fixed hidden z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60"></div>

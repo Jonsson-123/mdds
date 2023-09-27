@@ -45,7 +45,16 @@ socket.on('chat message', (data) => {
   const item = document.createElement('li');
   const string = data.username + ':' + ' ' + data.msg;
   item.textContent = string;
-  item.classList.add('mb-4', 'rounded', 'p-3', 'text-white');
+  item.classList.add(
+    'xl:mb-4',
+    'rounded',
+    'xl:p-3',
+    'text-white',
+    'sm:text-sm',
+    'text-xs',
+    'p-1',
+    'mb-1'
+  );
   data.username === document.getElementById('username').value
     ? item.classList.add('self-end', 'bg-gmpictonblue')
     : item.classList.add('self-start', 'bg-red-400');
@@ -58,7 +67,16 @@ socket.on('previous messages', (data) => {
     const item = document.createElement('li');
     const string = dataElement.username + ':' + ' ' + dataElement.msg;
     item.textContent = string;
-    item.classList.add('mb-4', 'rounded', 'p-3', 'text-white');
+    item.classList.add(
+      'xl:mb-4',
+      'rounded',
+      'xl:p-3',
+      'text-white',
+      'sm:text-sm',
+      'text-xs',
+      'p-1',
+      'mb-1'
+    );
     dataElement.username === document.getElementById('username').value
       ? item.classList.add('self-end', 'bg-gmpictonblue')
       : item.classList.add('self-start', 'bg-red-400');
