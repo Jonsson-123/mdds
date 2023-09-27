@@ -669,6 +669,10 @@ COMPONENTS TEHDÄÄN OMIA COMPONENTTEJA
   margin-left: 1rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -683,14 +687,6 @@ COMPONENTS TEHDÄÄN OMIA COMPONENTTEJA
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
 }
 
 .block {
@@ -816,12 +812,6 @@ COMPONENTS TEHDÄÄN OMIA COMPONENTTEJA
 
 .gap-4 {
   gap: 1rem;
-}
-
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .self-start {
@@ -1057,11 +1047,6 @@ COMPONENTS TEHDÄÄN OMIA COMPONENTTEJA
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-gmbondiblue {
-  --tw-text-opacity: 1;
-  color: rgb(9 142 177 / var(--tw-text-opacity));
 }
 
 .underline {
